@@ -209,3 +209,6 @@ __marimo__/
 
 # excel
 ~$*
+
+#jupyter notebook
+.ipynb_checkpoints
