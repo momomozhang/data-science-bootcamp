@@ -10,8 +10,9 @@ authors = [{ name = "Mengni Zhang", email = "monicamengni@gmail.com" }]
 requires-python = ">=3.8"
 
 [tool.ruff]
-[tool.ruff.lint]
 line-length = 100
+
+[tool.ruff.lint]
 select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
