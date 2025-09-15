@@ -1,7 +1,7 @@
 --------------------------------------------------
 -- Aufgabe 1 --
 --------------------------------------------------
-SELECT emp_no, SUM(salary)
+SELECT COUNT(salary)
 FROM salaries
 WHERE emp_no = '100001'
 GROUP BY emp_no;
@@ -43,9 +43,8 @@ AND
 SELECT first_name, last_name
 FROM employees
 WHERE emp_no < 20000
-AND first_name LIKE 'U%'
+AND first_name LIKE 'U__'
 AND first_name != 'Uri'
-AND length(first_name) = 3
 AND gender = 'F'
 AND
 ((birth_date BETWEEN '1957-05-23' AND '1958-01-01') OR
