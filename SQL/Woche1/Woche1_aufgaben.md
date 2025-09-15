@@ -1,4 +1,4 @@
-![Employee DB ERD](image.png)
+![Employee DB ERD](employees_erd.png)
 
 1. Wie viele salary-Werte hat die angestellte Fachkraft mit der Nummer emp_no '100001' erhalten?
 
@@ -17,7 +17,7 @@ Hinweis: Für ein Datumsintervall kannst du BETWEEN benutzen.
 5. Gibt es weitere Mitarbeiter, die die gleichen Kriterien wie die in Aufgabe 4 erfüllen, jedoch nicht den Namen Uri tragen, sondern einen Vornamen mit drei Buchstaben haben, der mit U beginnt?
 
 
-![DVD Rental ERD](image-1.png)
+![DVD Rental ERD](dvd_rental_erd.png)
 
 1. Du möchtest gerne einen Film ausleihen, der länger als drei Stunden dauert. Welche Filme stehen dir zur Auswahl?
 
