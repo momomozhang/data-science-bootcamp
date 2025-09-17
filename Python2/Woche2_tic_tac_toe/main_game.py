@@ -10,8 +10,7 @@ from functions import (
 )
 
 
-def main():
-    """Main game execution function"""
+def play_single_game():
     # Set up the data structure
     # Board is a 3x3 grid. it's data structure is a dictionary.
     # The dictionary keys are the name of 9 squares from A1 - C3.
@@ -21,69 +20,67 @@ def main():
     # so it's easy for the players to choose.
     board = {cell: f"({cell})" for cell in valid_cells}
 
+    game_on = True
+
+    print()
+    print("Yaaay! Let's play!")
+
+    players = player_order()
+    player_symbols = {players[0]: PLAYER_X, players[1]: PLAYER_O}
+    turn = players[0]
+    display_board(board)
+
+    while game_on:
+        if turn == players[0]:
+            player_choice = choose_square(turn, board, valid_cells)
+            board[player_choice] = PLAYER_X
+            display_board(board)
+
+            if win_check(board):
+                game_on = False
+                print(f"\n{turn} has won the game!")
+            elif is_full_board(board):
+                game_on = False
+                print("\nBoard is full. It's a draw.")
+            else:
+                turn = players[1]
+                print(f"\nNow it's {players[1]}'s turn.")
+
+        else:
+            player_choice = choose_square(turn, board, valid_cells)
+            board[player_choice] = PLAYER_O
+            display_board(board)
+
+            if win_check(board):
+                game_on = False
+                print(f"\n{turn} has won the game!")
+            elif is_full_board(board):
+                game_on = False
+                print("\nBoard is full. It's a draw.")
+            else:
+                turn = players[0]
+                print(f"\nNow it's {players[0]}'s turn.")
+
+
+def main():
+    """Main game execution function"""
+
     play_game = ""
 
     print("Let's play Tic Tac Toe!")
 
-    while True:
-        game_on = False
+    # print("Are you ready to play? Enter Yes or No")
+    while play_game == "":
+        play_game = input("Are you ready to play? Enter Yes or No: ").lower().strip()
 
-        # print("Are you ready to play? Enter Yes or No")
-        if play_game == "":
-            play_game = input("Are you ready to play? Enter Yes or No: ")
+    while play_game.startswith("y"):
+        play_single_game()
+        if replay():
+            play_game = "y"
         else:
-            play_game = "yes"
+            play_game = "n"
 
-        while play_game.lower().startswith("y"):
-            game_on = True
-            print("Yaaay! Let's play!")
-
-            players = player_order()
-            turn = players[0]
-            display_board(board)
-
-            while game_on:
-                if turn == players[0]:
-                    player_choice = choose_square(turn, board, valid_cells)
-                    board[player_choice] = PLAYER_X
-                    display_board(board)
-
-                    if win_check(board):
-                        game_on = False
-                        print(f"\n{turn} has won the game!")
-                    elif is_full_board(board):
-                        game_on = False
-                        print("\nBoard is full. It's a draw.")
-                    else:
-                        turn = players[1]
-                        print(f"\nNow it's {players[1]}'s turn.")
-
-                else:
-                    player_choice = choose_square(turn, board, valid_cells)
-                    board[player_choice] = PLAYER_O
-                    display_board(board)
-
-                    if win_check(board):
-                        game_on = False
-                        print(f"\n{turn} has won the game!")
-                    elif is_full_board(board):
-                        game_on = False
-                        print("\nBoard is full. It's a draw.")
-                    else:
-                        turn = players[0]
-                        print(f"\nNow it's {players[0]}'s turn.")
-
-            if replay():
-                # play_game = "yes"
-                board = {cell: f"({cell})" for cell in valid_cells}
-            else:
-                play_game = False
-                break
-
-        else:
-            print("\nYou don't want to play? Sad :(")
-            game_on = False
-        break
+    print("\nYou don't want to play again? Sad :(")
 
 
 if __name__ == "__main__":

@@ -45,7 +45,7 @@ def choose_square(player, board, valid_cells):
     """Take players' input to choose squares, then update the board and check if win / draw"""
     while True:
         print()
-        player_choice = input(f"{player}, type the cell name to choose a square ").upper()
+        player_choice = input(f"{player}, type the cell name to choose a square: ").strip().upper()
 
         if player_choice not in valid_cells:
             print(f"\n{player}, {player_choice} is not a valid square. Please choose again!")
@@ -79,7 +79,10 @@ def win_check(board):
     # Check each combination
     for keys in combinations:
         values = [board[key] for key in keys]
-        if values[0] in [PLAYER_X, PLAYER_O] and all(value == values[0] for value in values):
+        first_value = values[0]
+        if first_value not in [PLAYER_X, PLAYER_O]:
+            continue
+        if all(value == first_value for value in values):
             return True
 
     return False
@@ -95,10 +98,13 @@ def is_full_board(board):
 
 def replay():
     """Ask if the user wants to play again"""
+    response = ""
     print()
-    response = input("Do you want to play again? Enter Yes or No: ").lower()
+
+    while response == "":
+        response = input("Do you want to play again? Enter Yes or No: ").strip().lower()
+
     if response.startswith("y"):
         return True
 
-    print("\nYou don't want to play again? Sad :(")
     return False
