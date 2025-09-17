@@ -9,15 +9,15 @@ from functions import (
     win_check,
 )
 
+# Set up the data structure
+# Board is a 3x3 grid. it's data structure is a dictionary.
+# The dictionary keys are the name of 9 squares from A1 - C3.
+# Before each square is taken, the square's name will be shown,
+# so it's easy for the players to choose.
 VALID_CELLS = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]
 
 
 def play_single_game():
-    # Set up the data structure
-    # Board is a 3x3 grid. it's data structure is a dictionary.
-    # The dictionary keys are the name of 9 squares from A1 - C3.
-    # Before each square is taken, the square's name will be shown,
-    # so it's easy for the players to choose.
     board = {cell: f"({cell})" for cell in VALID_CELLS}
 
     game_on = True
