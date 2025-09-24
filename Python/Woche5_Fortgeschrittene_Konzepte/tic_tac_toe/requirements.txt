@@ -1,0 +1,8 @@
+# Tic-Tac-Toe AI Enhancement Dependencies
+# Minimal set for AI integration
+
+# LangChain OpenAI integration
+langchain-openai>=0.1.0
+
+# Environment management for API keys
+python-dotenv>=1.0.0
