@@ -11,7 +11,7 @@
 # "Zoom level" approach
 - Marco level: big picture
     - Are there clear energy trends for DE / FR in 1993-2003?
-- Meso level: group comparisons 
+- Meso level: group comparisons
     - what role did differnt fossil fules/coal/oil/gas play in each country?
 - Micro level: detailed analysis
     - which specific years showed the biggest changes and why?
@@ -44,6 +44,3 @@ ask: "If I were X, what would I want to know?"
     - "I noticed X is increasing while Y is decreasing - why?"
     - "Country Z is an outlier - what makes it different?"
     - "There's a sharp change in year Y - what happened?"
-
-
-

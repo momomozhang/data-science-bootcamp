@@ -19,7 +19,7 @@ PRIMARY ENERGY CONSUMPTION
     - coal_share_energy
     - gas_share_energy
     - oil_share_energy
-    
+
 - low_carbon_share_energy
     - renewables_share_energy
         - hydro_share_energy

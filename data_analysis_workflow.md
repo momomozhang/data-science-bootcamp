@@ -269,7 +269,7 @@ This is your systematic "data analysis recipe" to follow every time you get a ne
 
 ```
 New Dataset Received
-├── Is this familiar domain? 
+├── Is this familiar domain?
 │   ├── Yes → Spend 15 mins on Phase 1, focus on Phase 2-3
 │   └── No → Spend 30+ mins on Phase 1, research domain thoroughly
 ├── Is this time-sensitive analysis?

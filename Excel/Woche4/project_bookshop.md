@@ -11,7 +11,7 @@ Außerdem enthält die Datei Informationen zu der Edition selbst, wie die eindeu
 Jede Edition wird von einem Verlag veröffentlicht. Der Verlag hat eine eigene PubID (Verlags-ID), einen Namen (Publishing House) sowie Angaben zum Sitz: Stadt, Bundesland (State), Land (Country), das Gründungsjahr (Year Established) und auch deren Marketingausgaben (Marketing Spend).
 
 
-Deine Aufgabe in diesem Schritt ist es, aus diesen Daten ein ER-Diagramm zu entwickeln. 
+Deine Aufgabe in diesem Schritt ist es, aus diesen Daten ein ER-Diagramm zu entwickeln.
 
 Überlege dir dafür:
 
