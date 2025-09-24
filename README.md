@@ -28,11 +28,19 @@ pre-commit install
 # For most work (notebooks, data analysis, homework)
 source .venv/bin/activate
 
-# For specific projects with unique dependencies
+# For existing projects with their own environment
 cd project_folder/
+source .venv/bin/activate
+```
+
+### Creating New Project Environment (One-time Setup)
+
+```bash
+# Only when starting a NEW project that needs unique dependencies
+cd new_project_folder/
 python3 -m venv .venv
 source .venv/bin/activate
-pip install project_specific_packages
+pip install -r requirements.txt  # if requirements.txt exists
 ```
 
 ### When to Create Project Environment
