@@ -1,0 +1,11 @@
+Kunden-ID,Name,Alter,E-Mail-Adresse,Registrierungsdatum,Kaufbetrag,Wohnort
+1,  Anna  ,25.0,anna@example.com,15.01.2023,"300,5",Berlin
+2,BOB,26.0,bob(at)example.com,15-01-2023,450.00,Hamburg
+3,Clara,,clara@example,2023/02/15,220.75, München
+4,Dave,30.0,  dave@example.com  ,15.03.2023,,koeln
+5,ANNA,25.0,anna@example.com,15.01.2023,"300,5",berlin
+6,Petra,29.0,petra@beispiel.de,2023.02.20,"450,00",Frankfurt am Main
+7,Franz,,franz(at)beispiel.de,01-03-2023,"1.000,50",düsseldorf
+8,Sophie,,,03.2023,,STUTTGART
+9,Paul,31.0,paul@example.de,2023-03-15,320.5,berLin
+10,Lena,28.0, lena(at)beispiel.com,"15,02,2023",,Munich
