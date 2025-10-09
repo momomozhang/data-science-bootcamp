@@ -81,6 +81,3 @@ CREATE INDEX idx_flights_departure_airport ON flights(departure_airport_id);
 CREATE INDEX idx_flights_arrival_airport ON flights(arrival_airport_id);
 CREATE INDEX idx_bookings_passenger ON bookings(passenger_id);
 CREATE INDEX idx_bookings_flight ON bookings(flight_id);
-
-
-
