@@ -115,3 +115,56 @@ with col1_graph:
 
 with col2_tools:
     st.header("Analyse-Tools")
+
+    if selected_stocks:
+        st.subheader("Statistiken")
+
+        for stock in selected_stocks:
+            stock_data = stock_filtered_data[stock_filtered_data.iloc[:, 1] == stock]
+
+            if not stock_data.empty:
+                st.write(f"**{stock}**")
+
+                current_value = stock_data[metric].iloc[-1]
+                start_value = stock_data[metric].iloc[0]
+                min_value = stock_data[metric].min()
+                max_value = stock_data[metric].max()
+                avg_value = stock_data[metric].mean()
+
+                change = current_value - start_value
+                change_percent = (change / start_value) * 100
+
+                col_a, col_b = st.columns(2)
+                with col_a:
+                    st.metric("Aktuell", f"{current_value:.2f} €")
+                    st.metric("Min", f"{min_value:.2f} €")
+                    st.metric("Max", f"{max_value:.2f} €")
+                with col_b:
+                    st.metric("Durchschnitt", f"{avg_value:.2f} €")
+                    st.metric("Veränderung", f"{change:.2f} €", f"{change_percent:.2f}%")
+
+                st.divider()
+
+        st.subheader("Vergleich")
+
+        performance_data = []
+        for stock in selected_stocks:
+            stock_data = stock_filtered_data[stock_filtered_data.iloc[:, 1] == stock]
+            if not stock_data.empty:
+                start = stock_data[metric].iloc[0]
+                end = stock_data[metric].iloc[-1]
+                perf = ((end - start) / start) * 100
+                performance_data.append({"Aktie": stock, "Performance (%)": perf})
+
+        if performance_data:
+            perf_df = pd.DataFrame(performance_data).sort_values("Performance (%)", ascending=False)
+            st.dataframe(perf_df, hide_index=True)
+
+            best = perf_df.iloc[0]
+            worst = perf_df.iloc[-1]
+
+            st.success(f"🏆 Beste: {best['Aktie']} ({best['Performance (%)']:.2f}%)")
+            st.error(f"📉 Schlechteste: {worst['Aktie']} ({worst['Performance (%)']:.2f}%)")
+
+    else:
+        st.info("Wähle Aktien aus, um Analysen zu sehen.")
