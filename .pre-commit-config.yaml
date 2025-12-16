@@ -41,4 +41,4 @@ repos:
       - id: pylint
         args:
           - --rcfile=./pyproject.toml
-        additional_dependencies: [pylint==3.3.7]
+        additional_dependencies: [pylint==3.3.7, requests, streamlit]
